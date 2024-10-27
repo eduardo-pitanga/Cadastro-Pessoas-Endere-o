@@ -1,0 +1,51 @@
+@Cadastro_Pessos_Endereço_HostAddress = http://localhost:5226
+
+POST {{Cadastro_Pessos_Endereço_HostAddress}}/novapessoa/
+Content-Type: application/json
+
+{
+  "nome":"Eduardo",
+  "idade":"20",
+  "email":"edudupilo@gmail.com"
+}
+
+###
+
+POST {{Cadastro_Pessos_Endereço_HostAddress}}/novapessoa/
+Content-Type: application/json
+
+{
+  "nome":"Henrique",
+  "idade":"18",
+  "email":"hiquepilo@gmail.com"
+}
+
+###
+
+POST {{Cadastro_Pessos_Endereço_HostAddress}}/novoendereco
+Content-Type: application/json
+
+{
+  "logradouro":"rua",
+  "numero":"11",
+  "estado":"ES",
+  "cidade":"Serra",
+  "bairro":"Cidade Continental",
+  "pessoaId":"1"
+}
+
+###
+
+POST {{Cadastro_Pessos_Endereço_HostAddress}}/novoendereco
+Content-Type: application/json
+
+{
+  "logradouro":"avenida",
+  "numero":"154",
+  "estado":"ES",
+  "cidade":"Vitoria",
+  "bairro":"Jardim Camburi",
+  "pessoaId":"1"
+}
+
+###
