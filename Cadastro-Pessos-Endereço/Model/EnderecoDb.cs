@@ -2,7 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 
-class EnderecoDb : DbContext
+public class EnderecoDb : DbContext
 {
     public EnderecoDb(DbContextOptions<EnderecoDb> options)
         : base(options) { }

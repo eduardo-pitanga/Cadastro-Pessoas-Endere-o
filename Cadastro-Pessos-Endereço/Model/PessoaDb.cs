@@ -2,7 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 
-class PessoaDb : DbContext
+public class PessoaDb : DbContext
 {
     public PessoaDb(DbContextOptions<PessoaDb> options)
         : base(options) { }
