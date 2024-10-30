@@ -53,6 +53,18 @@ public class CadastroController : ControllerBase
         return Ok(resultado);
     }
 
+    [HttpDelete("/novapessoa/{id}")]
+    public async Task<IActionResult> DeleteNovapessoa(int id, [FromServices] PessoaDb db)
+    {
+        var pessoa = await db.Pessoas.FindAsync(id);
+        if (pessoa == null) return NotFound();
+
+        db.Pessoas.Remove(pessoa);
+        await db.SaveChangesAsync();
+        return NoContent();
+    }
+
+
     // Endereco Endpoints
     [HttpGet("/novoendereco")]
     public async Task<ActionResult<IEnumerable<Endereco>>> GetNovoendereco([FromServices] EnderecoDb db)
@@ -73,5 +85,16 @@ public class CadastroController : ControllerBase
     {
         var endereco = await db.Enderecos.FindAsync(id);
         return endereco != null ? Ok(endereco) : NotFound();
+    }
+
+    [HttpDelete("/novoendereco/{id}")]
+    public async Task<IActionResult> DeleteNovoendereco(int id, [FromServices] EnderecoDb db)
+    {
+        var endereco = await db.Enderecos.FindAsync(id);
+        if (endereco == null) return NotFound();
+
+        db.Enderecos.Remove(endereco);
+        await db.SaveChangesAsync();
+        return NoContent();
     }
 }

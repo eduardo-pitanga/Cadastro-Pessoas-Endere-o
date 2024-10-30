@@ -1,6 +1,9 @@
-@Cadastro_Pessos_Endereço_HostAddress = http://localhost:5226
+@Cadastro_Pessoa_Endereço_HostAddress = http://localhost:5226
 
-POST {{Cadastro_Pessos_Endereço_HostAddress}}/novapessoa/
+# Pessoa
+###
+
+POST {{Cadastro_Pessoa_Endereço_HostAddress}}/novapessoa/
 Content-Type: application/json
 
 {
@@ -11,7 +14,7 @@ Content-Type: application/json
 
 ###
 
-POST {{Cadastro_Pessos_Endereço_HostAddress}}/novapessoa/
+POST {{Cadastro_Pessoa_Endereço_HostAddress}}/novapessoa/
 Content-Type: application/json
 
 {
@@ -22,7 +25,14 @@ Content-Type: application/json
 
 ###
 
-POST {{Cadastro_Pessos_Endereço_HostAddress}}/novoendereco
+DELETE {{Cadastro_Pessoa_Endereço_HostAddress}}/novapessoa/{id}
+Content-Type: application/json
+
+
+# endereço
+###
+
+POST {{Cadastro_Pessoa_Endereço_HostAddress}}/novoendereco
 Content-Type: application/json
 
 {
@@ -36,7 +46,7 @@ Content-Type: application/json
 
 ###
 
-POST {{Cadastro_Pessos_Endereço_HostAddress}}/novoendereco
+POST {{Cadastro_Pessoa_Endereço_HostAddress}}/novoendereco
 Content-Type: application/json
 
 {
@@ -47,5 +57,10 @@ Content-Type: application/json
   "bairro":"Jardim Camburi",
   "pessoaId":"1"
 }
+
+###
+
+DELETE {{Cadastro_Pessoa_Endereço_HostAddress}}/novoendereco/{id}
+Content-Type: application/json
 
 ###
